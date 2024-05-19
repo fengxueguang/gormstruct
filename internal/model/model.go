@@ -57,6 +57,8 @@ func (g *GenDBInfo) GenerateByTableName() (out []GenOutInfo) {
 		sct.SetStructTableName(tab.Name)
 		sct.SetStructComment(tab.Comment)
 
+		//fmt.Println("✅ ", tab.ColumnsElement)
+		//fmt.Println("✅ ", g.genTableElement(tab.ColumnsElement))
 		sct.SetStructElments(g.genTableElement(tab.ColumnsElement)...)
 
 		pkg.SetStructs(sct)
